@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "build": "./node_modules/.bin/babel src -d dist",
+    "clean": "rm -rf build/*",
+    "dev": "nodemon ./src/bin/server.js --exec babel-node",
+    "start": "node ./dist/bin/server.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -11,6 +14,15 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "openapi-types": "^12.1.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.3",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2"
   }
 }
