@@ -1,8 +1,9 @@
 import swaggerUi from 'swagger-ui-express'
 import swaggerJSDoc from 'swagger-jsdoc'
 import { swaggerConfig } from '../config'
+import express from 'express'
 
-export default function setSwagger(app) {
+export default function setSwagger(app: express.Application) {
     const options = {
         definition: {
             openapi: swaggerConfig.openapi,
